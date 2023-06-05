@@ -1,11 +1,11 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Django Intro </title>
-  </head>
-  <body>
-    <h1>Hello, {{data.name}} </h1>
-  </body>
-</html>
+{% extends 'playground/main.html'%}
+
+{% block body%}
+
+  {% if year == 2024 %}
+    <h1>{{framework2024}}</h1>
+    {%else %}
+    <h1> {{framework2023}} </h1> 
+  {% endif %}
+  
+{% endblock %}

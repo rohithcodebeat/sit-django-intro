@@ -10,6 +10,7 @@ def home_page(request):
     return render(request, "playground/raw_page.html", context)
 
 def about_page(request):
+    print(request.GET)
     context = {
         "page_data" : "About Page"
     }

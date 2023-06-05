@@ -27,17 +27,30 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+"""
+fb.com -> React fe 
+
+api.fb.com -> Data Exchange / API 
+
+youtube.com -Requested -> api.fb.com 
+"""
+
 
 # Application definition
 
 INSTALLED_APPS = [
+    # built APPS
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # custome APPS
+    'playground',
+    # third Part Apps
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -49,12 +62,17 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# username , password -> amazon.in/login 
+# token -> amazon.in 
+# flipkart.com 
+
+
 ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,6 +90,8 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+
+# mysql or postgres 
 
 DATABASES = {
     'default': {

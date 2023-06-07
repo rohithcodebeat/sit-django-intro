@@ -44,12 +44,18 @@ class StudentDetailModel(models.Model):
     date_of_birth =  models.DateField()
     branch        =  models.CharField(max_length=100)
     year_of_joining = models.DateField()
-
+    # obj of studentDetailModel will have connection only for once with any instane of obj StudentContactModel
+    # StudentDetailMoldeobj1 -> StudentContactDetailModelobj1
+    # StudentDetailMoldeobj2 can't create a relation again with StudentContactDetailModelobj1
     contact_info = models.OneToOneField(
         StudentContactDetailModel, on_delete=models.CASCADE, 
         related_name="student_detail_contact_info", null=True, 
         blank=True) 
-    
+    # obj of studentDetailModel will have connection only for once with any instane of obj StudentContactModel
+    # StudentDetailMoldelobj1 -> AddressDetailModelobj1
+    # StudentDetailMoldelobj2 -> AddressDetailModelobj1
+    # One to Many
+    # Many to One
     address = models.ForeignKey(AddressDetailModel,
                                 on_delete=models.CASCADE, 
                                 related_name="student_detail_address", 
@@ -61,8 +67,17 @@ class StudentDetailModel(models.Model):
         return self.name 
     
 
-# class StundetPrevEducationModel(models.Model):
 
+class StundetPrevEducationModel(models.Model):
+    student = models.ForeignKey(StudentDetailModel, on_delete=models.CASCADE, related_name="student_prev_education")
+    university = models.CharField(max_length=100)
+    degree = models.CharField(max_length=100)
+    percentage = models.IntegerField()
+    address = models.ForeignKey(AddressDetailModel, on_delete=models.CASCADE, related_name="student_prev_education_address", null=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    # obj1 obj2 obj3 -> student1
 
 
 

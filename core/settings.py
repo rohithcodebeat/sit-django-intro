@@ -85,7 +85,7 @@ TEMPLATES = [
         },
     },
 ]
-
+# http 
 WSGI_APPLICATION = 'core.wsgi.application'
 
 

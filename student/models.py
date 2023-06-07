@@ -68,7 +68,7 @@ class StudentDetailModel(models.Model):
     
 
 
-class StundetPrevEducationModel(models.Model):
+class StudentPrevEducationModel(models.Model):
     student = models.ForeignKey(StudentDetailModel, on_delete=models.CASCADE, related_name="student_prev_education")
     university = models.CharField(max_length=100)
     degree = models.CharField(max_length=100)

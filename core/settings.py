@@ -48,7 +48,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # custome APPS
     'playground',
-    'student'
+    'student',
+    'users'
+
     # third Part Apps
 ]
 
